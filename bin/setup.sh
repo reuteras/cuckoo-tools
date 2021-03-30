@@ -5,6 +5,8 @@ set -e
 LOG=/tmp/cuckoo-tools.log
 touch "$LOG"
 
+export PATH=$PATH:$HOME/.local/bin
+
 # Make a fake sudo to get password before output
 sudo touch "$LOG"
 
@@ -42,7 +44,7 @@ info-message "Install apt packages for Cuckoo and Volatility."
 # shellcheck disable=SC2024
 sudo apt-get -y -qq install python python-dev libffi-dev libssl-dev \
     qemu-kvm bridge-utils yara python-yara libyara3 \
-    libyara-dev python-libvirt tcpdump libcap2-bin virt-manager swig \
+    libyara-dev tcpdump libcap2-bin virt-manager swig \
     suricata tesseract-ocr libjpeg-dev linux-headers-"$(uname -r)" ssdeep \
     libfuzzy-dev libxml2-dev libxslt-dev libyaml-dev zlib1g-dev \
     python-virtualenv python-setuptools postgresql libpq-dev \
