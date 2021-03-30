@@ -68,7 +68,7 @@ done
 cd ~/src/cuckoo || exit 1
 workon cuckoo
 
-info-message "Staring rooter script as root. "
+info-message "Starting rooter script as root. "
 # shellcheck disable=SC2024
 cuckoo rooter --sudo -g cuckoo >> ~/src/cuckoo/log/rooter.log 2>&1 &
 sleep 10
